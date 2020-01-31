@@ -24,7 +24,7 @@ const multiply = (a, b)=>{
   return a * b;
 }
 function greeting (firstName, lastName) {
-  return `Hello ${this.firstName} ${this.lastName}, nice to meet you!`;
+  return `Hello ${firstName} ${lastName}, nice to meet you!`;
 }
 
 
@@ -39,7 +39,9 @@ console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice t
 
 // Explain in your own words why nestedfunction can access the variable internal.
 
-// Explanation: 
+
+// Explanation: They can access the variable because they are nested in the same function. 
+
 
 
 const external = "I'm outside the function";
