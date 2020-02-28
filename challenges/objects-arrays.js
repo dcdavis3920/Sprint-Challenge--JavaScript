@@ -76,13 +76,21 @@ const graduates = [
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array. This will be an array of strings.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
+
+
+
+const universities = [];
+
+
 for (i = 0; i < graduates.length; i++){
-  graduates[i].university;
-  university.push(graduates[i].university);
-  univercities.sort;
-  const universities = [];
+  const university = graduates[i].university;
+  universities.push(university);
+  graduates.sort();
+ 
 }
-console.log(universities);
+console.log(graduates);
+
+
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
 
@@ -90,15 +98,32 @@ The resulting contact information strings should have a space between the first 
 "Josh josh@example.com"
 
 Log the result of your new array. */
+const contactInfo = [];
+
 for (i = 0; i < graduates.length; i++){
   contactInfo.push(`${graduates[i].first_name},  ${graduates[i].email}`);
-const contactInfo = [];
 }
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
-const unisWithUni = [];
+
+const unisWithUni=[];
+
+
+
+for (i = 0; i < graduates.length; i++) {
+  const universty = graduates[i].university;
+  if (graduates[i].university === "Uni")
+    unisWithUni.push(university);
+}
+
+
+
+
 console.log(unisWithUni);
+
+
+
 
 
 // ==== ADVANCED Array Methods ====
@@ -123,39 +148,46 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-function getAnimalNames(animals){
 const displayNames = [];
+
+function getAnimalNames(animals){
 const displayNames= zooAnimals.forEach(function(animalList){
   displayNames.push (`animal_name:${animalList.animal_name}, scientific_name: ${animalList.scientific_name}`);
-
-console.log(displayNames);
+  return displayName;
 });
-return displayNames;
+
 }
+console.log(displayNames);
 
 /* Request 2: .map()
 
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
-function lowCaseAnimalNames(animal){
-  let newArr=animal.map(function(animal){
-      return animal.animal_name.toLowerCase()
-  });
-  return newArr;
-}
+
+let lowerCaseAnimalsNames = zooAnimals.map((zooAnimal, index, zooAnimals) => {
+  return zooAnimal.animal_name.toLowerCase();
+});
+
+console.log(lowerCaseAnimalsNames); 
 
 
-console.log(lowCaseAnimalNames);
+
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-let lowPopulationAnimals= zooAnimals.filter(function(item){
-  return item.population < 5;
-});
+
+
+
+const lowPopulationAnimals = zooAnimals.filter(function(zooAnimal){
+    return zooAnimal.population < 5;
+     });
+     
+  
+
 
 console.log(lowPopulationAnimals);
 
@@ -164,11 +196,14 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const reducePopulation=zooAnimalsreduce((acc, currentValue)=>{
-  return total += populations;
+function addPopulation(zooAnimals){
+  const population= zooAnimals.reduce(function(accum, currentValue){
+    return accum + currentValue.population;
   },0);
+  return population;
+}
 
-console.log(populationTotal);
+console.log(zooAnimals);
 
 
 /*
